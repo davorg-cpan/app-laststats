@@ -1,0 +1,21 @@
+#!/usr/bin/perl -CS
+
+use strict;
+use warnings;
+
+use Getopt::Long;
+
+use App::LastFM::LastStats;
+
+my $lastfm;
+
+if (@ARGV == 1) {
+  $lastfm = App::LastFM::LastStats->new(username => $ARGV[0]);
+} else {
+  my %opts;
+  GetOptions(\%opts, 'user=s');
+
+  $lastfm = App::LastFM::LastStats->new(%opts);
+}
+
+$lastfm->run;
