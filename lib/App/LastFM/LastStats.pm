@@ -4,6 +4,7 @@ class App::LastFM::LastStats {
 
   use strict;
   use warnings;
+  no warnings 'experimental::class';
   use feature 'say';
 
   use Net::LastFM;
@@ -16,15 +17,13 @@ class App::LastFM::LastStats {
     api_secret => $ENV{LASTFM_SECRET},
   );
   field $method   = 'user.getTopArtists';
+  field $data;
   field @artists;
 
   method run {
-    my $data = $self->laststats;
+    $self->laststats;
 
-    @artists = map { {
-      name => $_->{name},
-      playcount => $_->{playcount}
-    } } @{$data->{topartists}{artist}}[0 .. 9];
+    @artists = @{$data->{topartists}{artist}}[0 .. 9];
 
     $self->render;
   }
@@ -34,16 +33,12 @@ class App::LastFM::LastStats {
   }
 
   method laststats {
-
-    my (@artists, $data);
-
     $data = $lastfm->request_signed(
       method => $method,
       user   => $username,
       period => $period,
     );
-
-    return $data;
-
   }
 }
+
+1;
