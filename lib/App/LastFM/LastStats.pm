@@ -37,8 +37,20 @@ class App::LastFM::LastStats {
       'count=i'  => \$count,
     );
 
+    $self->validate;
     $self->laststats;
     $self->render;
+  }
+
+  method validate {
+    my @valid_periods = qw(overall 7day 1month 3month 6month 12month);
+    unless (grep { $_ eq $period } @valid_periods) {
+      die "Invalid period: $period\n";
+    }
+
+    unless (exists $renderer->{$format}) {
+      die "Invalid format: $format\n";
+    }
   }
 
   method render_text {
@@ -64,11 +76,7 @@ class App::LastFM::LastStats {
   }
 
   method render {
-    my $method;
-    unless ($method = $renderer->{$format}) {
-      die "Invalid render format: $format\n";
-    }
-
+    my $method = $renderer->{$format};
     $self->$method;
   }
 
