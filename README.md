@@ -21,4 +21,6 @@ out a way to display the output publicly at some point.
 
 ## Command line options
 
-* `-user` : Last.fm username (defaults to "davorg")
+* `--user` : Last.fm username (defaults to "davorg")
+* `--count` : The number of artists to display (defaults to 10)
+* `--format` : The format to display results in. Can be "text", "html" or "json" (defaults to "text")
