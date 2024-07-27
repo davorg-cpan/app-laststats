@@ -13,7 +13,7 @@ if (@ARGV == 1) {
   $lastfm = App::LastFM::LastStats->new(username => $ARGV[0]);
 } else {
   my %opts;
-  GetOptions(\%opts, 'user=s', 'count=i', 'format=s');
+  GetOptions(\%opts, 'user=s', 'count=i', 'format=s', 'period=s');
 
   $lastfm = App::LastFM::LastStats->new(%opts);
 }

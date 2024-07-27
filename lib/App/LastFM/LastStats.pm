@@ -30,6 +30,13 @@ class App::LastFM::LastStats {
   };
 
   method run {
+    GetOptions(
+      'user=s'   => \$username,
+      'period=s' => \$period,
+      'format=s' => \$format,
+      'count=i'  => \$count,
+    );
+
     $self->laststats;
     $self->render;
   }
