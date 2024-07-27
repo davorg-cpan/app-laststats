@@ -43,6 +43,9 @@ class App::LastFM::LastStats {
   }
 
   method validate {
+    $period = lc $period;
+    $format = lc $format;
+
     my @valid_periods = qw(overall 7day 1month 3month 6month 12month);
     unless (grep { $_ eq $period } @valid_periods) {
       die "Invalid period: $period\n";
