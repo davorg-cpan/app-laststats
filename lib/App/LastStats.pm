@@ -11,7 +11,7 @@ class App::LastStats {
   use Getopt::Long;
   use JSON;
 
-  our $VERSION = '0.01';
+  our $VERSION = '0.0.1';
 
   field $username :param = 'davorg';
   field $period   :param = '7day';
