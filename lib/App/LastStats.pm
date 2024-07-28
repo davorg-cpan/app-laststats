@@ -1,6 +1,6 @@
 use Feature::Compat::Class;
 
-class App::LastFM::LastStats {
+class App::LastStats {
 
   use strict;
   use warnings;

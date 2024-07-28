@@ -5,17 +5,17 @@ use warnings;
 
 use Getopt::Long;
 
-use App::LastFM::LastStats;
+use App::LastStats;
 
 my $lastfm;
 
 if (@ARGV == 1) {
-  $lastfm = App::LastFM::LastStats->new(username => $ARGV[0]);
+  $lastfm = App::LastStats->new(username => $ARGV[0]);
 } else {
   my %opts;
   GetOptions(\%opts, 'user=s', 'count=i', 'format=s', 'period=s');
 
-  $lastfm = App::LastFM::LastStats->new(%opts);
+  $lastfm = App::LastStats->new(%opts);
 }
 
 $lastfm->run;
