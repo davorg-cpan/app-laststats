@@ -1,0 +1,6 @@
+Makefile.PL
+lib/App/LastStats.pm
+bin/laststats
+t/00-load.t
+t/01-basic.t
+MANIFEST

@@ -11,6 +11,8 @@ class App::LastStats {
   use Getopt::Long;
   use JSON;
 
+  our $VERSION = '0.01';
+
   field $username :param = 'davorg';
   field $period   :param = '7day';
   field $format   :param = 'text';
@@ -106,4 +108,65 @@ class App::LastStats {
 }
 
 1;
+
+__END__
+
+=head1 NAME
+
+App::LastStats - A module to fetch and display Last.fm statistics
+
+=head1 SYNOPSIS
+
+  use App::LastStats;
+
+  my $stats = App::LastStats->new(
+    username => 'davorg',
+    period   => '7day',
+    format   => 'text',
+    count    => 10,
+  );
+
+  $stats->run;
+
+=head1 DESCRIPTION
+
+App::LastStats is a module that fetches and displays Last.fm statistics for a given user. It allows you to specify the time period, format, and number of artists to display.
+
+=head1 METHODS
+
+=head2 run
+
+Fetches and displays the Last.fm statistics based on the provided options.
+
+=head2 validate
+
+Validates the provided options.
+
+=head2 render_text
+
+Renders the statistics in plain text format.
+
+=head2 render_json
+
+Renders the statistics in JSON format.
+
+=head2 render_html
+
+Renders the statistics in HTML format.
+
+=head2 render
+
+Renders the statistics using the specified format.
+
+=head2 laststats
+
+Fetches the Last.fm statistics for the specified user and time period.
+
+=head1 AUTHOR
+
+Your Name <you@example.com>
+
+=head1 LICENSE
+
+This library is free software; you can redistribute it and/or modify it under the same terms as Perl itself.
 
