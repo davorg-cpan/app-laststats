@@ -164,9 +164,10 @@ Fetches the Last.fm statistics for the specified user and time period.
 
 =head1 AUTHOR
 
-Your Name <you@example.com>
+Dave Cross <dave@perlhacks.com>
 
 =head1 LICENSE
 
 This library is free software; you can redistribute it and/or modify it under the same terms as Perl itself.
 
+=cut
