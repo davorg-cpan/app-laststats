@@ -4,7 +4,7 @@ class App::LastStats {
 
   use strict;
   use warnings;
-  no warnings 'experimental::class';
+  # no warnings 'experimental::class';
   use feature 'say';
 
   use Net::LastFM;
