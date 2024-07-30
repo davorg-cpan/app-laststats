@@ -7,11 +7,6 @@ on:
     branches: [ main ]
   workflow_dispatch:
 
-env:
-  # These only work while we're not actually running real tests
-  LASTFM_API_KEY: 'SomeRandomKey'
-  LASTFM_SECRET: 'Sekrit'
-
 jobs:
   test:
     uses: PerlToolsTeam/github_workflows/.github/workflows/cpan-test.yml@main
