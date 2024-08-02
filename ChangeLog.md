@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - The ability to pass API details on the command line
+- Turn off experimental warnings
 - Improved documentation
 
 ## [0.0.3] - 2024-07-30
