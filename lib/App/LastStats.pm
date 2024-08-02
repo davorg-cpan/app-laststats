@@ -167,12 +167,22 @@ Renders the statistics using the specified format.
 
 Fetches the Last.fm statistics for the specified user and time period.
 
+=head1 API
+
+You will need an API key and secret in order to use this program. You can
+get these from - L<https://www.last.fm/api/account/create>.
+
+The API key and secret can be passed as arguments to the constructor (as
+in the sample code above). Alternatively, they can be read from
+environment variables called `LASTFM_API_KEY` and `LASTFM_API_SECRET`.
+
 =head1 AUTHOR
 
 Dave Cross <dave@perlhacks.com>
 
 =head1 LICENSE
 
-This library is free software; you can redistribute it and/or modify it under the same terms as Perl itself.
+This library is free software; you can redistribute it and/or modify it
+under the same terms as Perl itself.
 
 =cut

@@ -30,3 +30,10 @@ out a way to display the output publicly at some point.
 
 The values for `--api-key` and `--api-secret` can alternatively be read from
 environment variables called `LASTFM_API_KEY` and `LASTFM_API_SECRET`.
+
+## API KEY
+
+As shown above, you will need an API key and secret. You can get these from:
+
+* https://www.last.fm/api/account/create
+
