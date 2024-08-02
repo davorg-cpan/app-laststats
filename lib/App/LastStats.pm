@@ -6,11 +6,13 @@ class App::LastStats {
   use warnings;
   use feature 'say';
 
+  no if $^V >= v5.38, warnings => 'experimental::class';
+
   use Net::LastFM;
   use Getopt::Long;
   use JSON;
 
-  our $VERSION = '0.0.3';
+  our $VERSION = '0.0.4';
 
   field $username   :param = 'davorg';
   field $period     :param = '7day';
