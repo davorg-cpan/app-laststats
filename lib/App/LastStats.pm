@@ -16,9 +16,11 @@ class App::LastStats {
   field $period   :param = '7day';
   field $format   :param = 'text';
   field $count    :param = 10;
+  field $api_key  :param = $ENV{LASTFM_API_KEY};
+  field $api_secret :param = $ENV{LASTFM_SECRET};
   field $lastfm   = Net::LastFM->new(
-    api_key    => $ENV{LASTFM_API_KEY},
-    api_secret => $ENV{LASTFM_SECRET},
+    api_key    => $api_key,
+    api_secret => $api_secret,
   );
   field $method   = 'user.getTopArtists';
   field $data;
@@ -32,10 +34,12 @@ class App::LastStats {
 
   method run {
     GetOptions(
-      'user=s'   => \$username,
-      'period=s' => \$period,
-      'format=s' => \$format,
-      'count=i'  => \$count,
+      'user=s'      => \$username,
+      'period=s'    => \$period,
+      'format=s'    => \$format,
+      'count=i'     => \$count,
+      'api-key=s'   => \$api_key,
+      'api-secret=s'=> \$api_secret,
     );
 
     $self->validate;
@@ -119,10 +123,12 @@ App::LastStats - A module to fetch and display Last.fm statistics
   use App::LastStats;
 
   my $stats = App::LastStats->new(
-    username => 'davorg',
-    period   => '7day',
-    format   => 'text',
-    count    => 10,
+    username   => 'davorg',
+    period     => '7day',
+    format     => 'text',
+    count      => 10,
+    api_key    => 'your_api_key',
+    api_secret => 'your_api_secret',
   );
 
   $stats->run;
