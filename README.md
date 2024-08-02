@@ -25,3 +25,8 @@ out a way to display the output publicly at some point.
 * `--count` : The number of artists to display (defaults to 10)
 * `--format` : The format to display results in. Can be "text", "html" or "json" (defaults to "text")
 * `--period` : The time period for the stats. Can be "overall", "7day", "1month", "3month", "6month", "12month" (defaults to "7day")
+* `--api-key` : Last.fm API key
+* `--api-secret` : Last.fm API secret
+
+The values for `--api-key` and `--api-secret` can alternatively be read from
+environment variables called `LASTFM_API_KEY` and `LASTFM_API_SECRET`.
