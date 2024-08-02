@@ -12,13 +12,13 @@ class App::LastStats {
 
   our $VERSION = '0.0.3';
 
-  field $username :param = 'davorg';
-  field $period   :param = '7day';
-  field $format   :param = 'text';
-  field $count    :param = 10;
-  field $api_key  :param = $ENV{LASTFM_API_KEY};
-  field $api_secret :param = $ENV{LASTFM_SECRET};
-  field $lastfm   = Net::LastFM->new(
+  field $username   :param = 'davorg';
+  field $period     :param = '7day';
+  field $format     :param = 'text';
+  field $count      :param = 10;
+  field $api_key    :param = $ENV{LASTFM_API_KEY};
+  field $api_secret :param = $ENV{LASTFM_API_SECRET};
+  field $lastfm     = Net::LastFM->new(
     api_key    => $api_key,
     api_secret => $api_secret,
   );
