@@ -1,0 +1,8 @@
+#!/bin/sh
+
+cd "$( dirname -- "${BASH_SOURCE[0]}" )"
+
+ver=`perl -nE '/\@v?([\d\.]+)/ and print $1 and exit' Dockerfile`
+echo Building version $ver
+docker build -t davorg/laststats:latest -t davorg/laststats:app-laststats_$ver .
+docker push -a docker.io/davorg/laststats
