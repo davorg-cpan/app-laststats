@@ -172,11 +172,11 @@ Fetches the Last.fm statistics for the specified user and time period.
 =head1 API
 
 You will need an API key and secret in order to use this program. You can
-get these from - L<https://www.last.fm/api/account/create>.
+get these from L<https://www.last.fm/api/account/create>.
 
 The API key and secret can be passed as arguments to the constructor (as
 in the sample code above). Alternatively, they can be read from
-environment variables called `LASTFM_API_KEY` and `LASTFM_API_SECRET`.
+environment variables called C<LASTFM_API_KEY> and C<LASTFM_API_SECRET>.
 
 =head1 AUTHOR
 
