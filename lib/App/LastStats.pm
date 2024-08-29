@@ -1,5 +1,7 @@
 use Feature::Compat::Class;
 
+package App::LastStats; # For MetaCPAN
+
 class App::LastStats {
 
   use strict;
