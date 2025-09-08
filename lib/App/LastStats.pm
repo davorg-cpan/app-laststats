@@ -17,6 +17,8 @@ class App::LastStats {
   our $VERSION = '0.0.10';
 
   field $username   :param = 'davorg';
+
+  method username { $username }
   field $period     :param = '7day';
   field $format     :param = 'text';
   field $count      :param = 10;
