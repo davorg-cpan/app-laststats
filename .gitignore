@@ -6,3 +6,7 @@ MYMETA.yml
 Makefile
 blib/
 pm_to_blib
+
+# Don't commit dependencies that were copied for testing
+lib/Feature/
+lib/JSON*
