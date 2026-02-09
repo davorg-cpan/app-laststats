@@ -78,13 +78,14 @@ class App::LastStats {
       position => $pos++,
       name     => $_->{name},
       count    => $_->{playcount},
+      url      => $_->{url}
     } } @artists;
     say JSON->new->canonical(1)->pretty(1)->encode(\@data);
   }
 
   method render_html {
     my $html = "<ol>\n";
-    $html .= "  <li>$_->{name} ($_->{playcount})</li>\n" for @artists;
+    $html .= qq[  <li><a href="$_->{url}">$_->{name}</a> ($_->{playcount})</li>\n] for @artists;
     $html .= "</ol>";
     say $html;
   }
