@@ -37,15 +37,6 @@ class App::LastStats {
   };
 
   method run {
-    GetOptions(
-      'user=s'      => \$username,
-      'period=s'    => \$period,
-      'format=s'    => \$format,
-      'count=i'     => \$count,
-      'api-key=s'   => \$api_key,
-      'api-secret=s'=> \$api_secret,
-    );
-
     $self->validate;
     $self->laststats;
     $self->render;
